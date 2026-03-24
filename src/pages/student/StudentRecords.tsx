@@ -119,7 +119,7 @@ export default function StudentRecords() {
           <div className="space-y-4">
             {subjects.map(([subject, tests]) => {
               const subAvg = Math.round(
-                (tests as any[]).reduce((acc, t: any) => acc + (t.marks_obtained / t.max_marks) * 100, 0) / tests.length
+                (tests as any[]).reduce((acc, t: any) => acc + (t.marks_obtained / t.max_marks) * 100, 0) / (tests as any[]).length
               );
               const topGrade = (tests as any[]).sort((a: any, b: any) => b.marks_obtained - a.marks_obtained)[0]?.grade;
 
