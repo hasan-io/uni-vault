@@ -168,27 +168,29 @@ export default function StudentFees() {
 
         {paid.length > 0 && (
           <Card>
-            <CardHeader><CardTitle className="font-display">Payment History ({paid.length})</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="font-display">Transaction Details ({paid.length})</CardTitle></CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead><tr className="border-b bg-muted/50">
-                    <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">S.No</th>
-                    <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Date</th>
-                    <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Payment ID</th>
+                    <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Transaction ID</th>
+                    <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Fee Label</th>
                     <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Amount</th>
-                    <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Mode</th>
+                    <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Payment Mode</th>
+                    <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Payment Date</th>
+                    <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Status</th>
                     <th className="text-left p-3 font-medium text-muted-foreground uppercase text-xs">Receipt</th>
                   </tr></thead>
                   <tbody>
-                    {paid.map((p: any, i: number) => (
+                    {paid.map((p: any) => (
                       <tr key={p.id} className="border-b hover:bg-muted/30">
-                        <td className="p-3">{i + 1}</td>
-                        <td className="p-3">{p.paid_at ? new Date(p.paid_at).toLocaleDateString() : "—"}</td>
-                        <td className="p-3 font-mono text-xs">{p.razorpay_payment_id || "—"}</td>
+                        <td className="p-3 font-mono text-xs">{p.razorpay_payment_id || p.id.slice(0, 8)}</td>
+                        <td className="p-3 font-medium">{p.fee_structures?.label || "—"}</td>
                         <td className="p-3">₹{Number(p.amount).toLocaleString()}</td>
-                        <td className="p-3">{p.payment_mode || "—"}</td>
-                        <td className="p-3"><Button size="sm" variant="outline" onClick={() => downloadReceipt(p)}><Download className="w-3 h-3 mr-1" />Receipt</Button></td>
+                        <td className="p-3">{p.payment_mode || "Razorpay"}</td>
+                        <td className="p-3">{p.paid_at ? new Date(p.paid_at).toLocaleDateString() : "—"}</td>
+                        <td className="p-3"><Badge variant="success">Paid</Badge></td>
+                        <td className="p-3"><Button size="sm" variant="outline" onClick={() => downloadReceipt(p)}><Download className="w-3 h-3 mr-1" />Download Receipt</Button></td>
                       </tr>
                     ))}
                   </tbody>

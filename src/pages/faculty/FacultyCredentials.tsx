@@ -25,7 +25,7 @@ export default function FacultyCredentials() {
   const [myStudents, setMyStudents] = useState<any[]>([]);
 
   useEffect(() => {
-    supabase.from("courses").select("*").order("name").then(({ data }) => setCourses(data || []));
+    supabase.from("courses").select("*, departments:department_id(id, name)").order("name").then(({ data }) => setCourses(data || []));
   }, []);
 
   useEffect(() => {
@@ -60,13 +60,14 @@ export default function FacultyCredentials() {
       const parts = name.split(",").map(p => p.trim());
       const studentName = parts[0];
       const count = myStudents.length + i + 1;
-      const username = `STU-${course?.name || "X"}-${section?.year || new Date().getFullYear()}-${String(count).padStart(3, "0")}`;
+      const courseCode = (course?.name || "X").replace(/[^A-Za-z]/g, "").toUpperCase().slice(0, 4);
+      const username = `STU-${courseCode}-${section?.year || new Date().getFullYear()}-${String(count).padStart(3, "0")}`;
       return {
         name: studentName,
         username,
         course_id: selectedCourse,
         section_id: selectedSection,
-        department_id: course?.department_id || null,
+        department_id: course?.departments?.id || course?.department_id || null,
         year: section?.year || null,
       };
     });
