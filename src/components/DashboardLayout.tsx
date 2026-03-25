@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import NotificationBell from "@/components/NotificationBell";
 import {
   LayoutDashboard, Users, BookOpen, ClipboardCheck, GraduationCap, KeyRound,
-  UserCircle, LogOut, Building2, Trophy, Award, FileText, Briefcase, ShieldCheck,
+  UserCircle, LogOut, Building2, Trophy, Award, FileText, Briefcase, ShieldCheck, DollarSign,
 } from "lucide-react";
 
 const navItems = {
@@ -18,6 +18,7 @@ const navItems = {
     { title: "Dashboard", url: "/admin", icon: LayoutDashboard },
     { title: "User Management", url: "/admin/users", icon: Users },
     { title: "Academic Structure", url: "/admin/structure", icon: Building2 },
+    { title: "Fees", url: "/admin/fees", icon: DollarSign },
   ],
   faculty: [
     { title: "Dashboard", url: "/faculty", icon: LayoutDashboard },
@@ -26,6 +27,7 @@ const navItems = {
     { title: "Attendance", url: "/faculty/attendance", icon: ClipboardCheck },
     { title: "Student Records", url: "/faculty/students", icon: GraduationCap },
     { title: "Verification Panel", url: "/faculty/verification", icon: ShieldCheck },
+    { title: "Fees", url: "/faculty/fees", icon: DollarSign },
   ],
   student: [
     { title: "Dashboard", url: "/student", icon: LayoutDashboard },
@@ -35,6 +37,7 @@ const navItems = {
     { title: "Leaderboard", url: "/student/leaderboard", icon: Trophy },
     { title: "Resume Builder", url: "/student/resume", icon: FileText },
     { title: "Portfolio", url: "/student/portfolio", icon: Briefcase },
+    { title: "Fees", url: "/student/fees", icon: DollarSign },
     { title: "Profile", url: "/student/profile", icon: UserCircle },
   ],
 };

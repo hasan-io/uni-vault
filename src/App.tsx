@@ -9,12 +9,14 @@ import LoginPage from "@/pages/LoginPage";
 import AdminDashboard from "@/pages/admin/AdminDashboard";
 import AdminUserManagement from "@/pages/admin/AdminUserManagement";
 import AdminStructure from "@/pages/admin/AdminStructure";
+import AdminFees from "@/pages/admin/AdminFees";
 import FacultyDashboard from "@/pages/faculty/FacultyDashboard";
 import FacultyCredentials from "@/pages/faculty/FacultyCredentials";
 import FacultyMarks from "@/pages/faculty/FacultyMarks";
 import FacultyAttendance from "@/pages/faculty/FacultyAttendance";
 import FacultyStudentRecords from "@/pages/faculty/FacultyStudentRecords";
 import FacultyVerification from "@/pages/faculty/FacultyVerification";
+import FacultyFees from "@/pages/faculty/FacultyFees";
 import StudentDashboard from "@/pages/student/StudentDashboard";
 import StudentRecords from "@/pages/student/StudentRecords";
 import StudentAttendance from "@/pages/student/StudentAttendance";
@@ -23,6 +25,7 @@ import StudentAchievements from "@/pages/student/StudentAchievements";
 import StudentLeaderboard from "@/pages/student/StudentLeaderboard";
 import StudentResumeBuilder from "@/pages/student/StudentResumeBuilder";
 import StudentPortfolio from "@/pages/student/StudentPortfolio";
+import StudentFees from "@/pages/student/StudentFees";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -49,6 +52,7 @@ const App = () => (
             <Route path="/admin" element={<ProtectedRoute allowedRoles={["admin"]}><AdminDashboard /></ProtectedRoute>} />
             <Route path="/admin/users" element={<ProtectedRoute allowedRoles={["admin"]}><AdminUserManagement /></ProtectedRoute>} />
             <Route path="/admin/structure" element={<ProtectedRoute allowedRoles={["admin"]}><AdminStructure /></ProtectedRoute>} />
+            <Route path="/admin/fees" element={<ProtectedRoute allowedRoles={["admin"]}><AdminFees /></ProtectedRoute>} />
 
             <Route path="/faculty" element={<ProtectedRoute allowedRoles={["faculty"]}><FacultyDashboard /></ProtectedRoute>} />
             <Route path="/faculty/credentials" element={<ProtectedRoute allowedRoles={["faculty"]}><FacultyCredentials /></ProtectedRoute>} />
@@ -56,6 +60,7 @@ const App = () => (
             <Route path="/faculty/attendance" element={<ProtectedRoute allowedRoles={["faculty"]}><FacultyAttendance /></ProtectedRoute>} />
             <Route path="/faculty/students" element={<ProtectedRoute allowedRoles={["faculty"]}><FacultyStudentRecords /></ProtectedRoute>} />
             <Route path="/faculty/verification" element={<ProtectedRoute allowedRoles={["faculty"]}><FacultyVerification /></ProtectedRoute>} />
+            <Route path="/faculty/fees" element={<ProtectedRoute allowedRoles={["faculty"]}><FacultyFees /></ProtectedRoute>} />
 
             <Route path="/student" element={<ProtectedRoute allowedRoles={["student"]}><StudentDashboard /></ProtectedRoute>} />
             <Route path="/student/records" element={<ProtectedRoute allowedRoles={["student"]}><StudentRecords /></ProtectedRoute>} />
@@ -65,6 +70,7 @@ const App = () => (
             <Route path="/student/resume" element={<ProtectedRoute allowedRoles={["student"]}><StudentResumeBuilder /></ProtectedRoute>} />
             <Route path="/student/portfolio" element={<ProtectedRoute allowedRoles={["student"]}><StudentPortfolio /></ProtectedRoute>} />
             <Route path="/student/profile" element={<ProtectedRoute allowedRoles={["student"]}><StudentProfile /></ProtectedRoute>} />
+            <Route path="/student/fees" element={<ProtectedRoute allowedRoles={["student"]}><StudentFees /></ProtectedRoute>} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
