@@ -43,6 +43,12 @@ All data is **secure, verified, and synchronized in real-time**.
 * AI Resume Builder (suggestions based on profile data)
 * AI Skill Assistant (guidance for upskilling)
 * Leaderboard & engagement tracking
+* **Fees Management**
+
+  * View assigned course fees based on course and year
+  * Pay fees directly through integrated payment gateway
+  * Secure online payment via Razorpay
+  * Track payment status and history
 
 ---
 
@@ -65,6 +71,12 @@ All data is **secure, verified, and synchronized in real-time**.
 * Generate credentials for faculty
 * Access full institutional analytics
 * Monitor engagement and performance trends
+* **Fees Management**
+
+  * Set course-wise and year-wise fees
+  * Create fees by selecting course, academic year, and amount
+  * Update or modify fees dynamically
+  * Ensure students can view fees in real-time
 
 ---
 
@@ -102,6 +114,7 @@ Key entities:
 * Subjects
 * Departments / Courses / Sections
 * Notifications
+* Fees & Payments
 
 All modules are **interconnected via unique IDs** to ensure consistency.
 
@@ -115,8 +128,11 @@ All modules are **interconnected via unique IDs** to ensure consistency.
 4. Faculty verifies submission
 5. Approved data is stored centrally
 6. Academic records & attendance are added by faculty
-7. Dashboards update in real-time
-8. Reports and portfolios are generated dynamically
+7. Admin defines course/year fees
+8. Student views and pays fees via payment gateway
+9. Payment status is updated in system
+10. Dashboards update in real-time
+11. Reports and portfolios are generated dynamically
 
 ---
 
@@ -130,6 +146,7 @@ All modules are **interconnected via unique IDs** to ensure consistency.
 * Real-time dashboards & analytics
 * Automated report generation
 * Role-based access control
+* Integrated Fees Management & Online Payment System
 
 ---
 
@@ -139,6 +156,7 @@ All modules are **interconnected via unique IDs** to ensure consistency.
 * ✅ **AI integration** for career growth
 * ✅ **Real-time synchronization** (no data mismatch)
 * ✅ Complete **student lifecycle tracking**
+* ✅ Integrated **fees and payment system**
 * ✅ Scalable for entire institutions
 
 ---
@@ -164,20 +182,31 @@ This project was developed as part of a hackathon to solve real-world university
 This system transforms **scattered student data into a structured, verified, and actionable digital profile**, helping both students and institutions operate more efficiently.
 
 ---
-## Platform Link
 
-Click here to access our Platform : "https://uni-vault-delta.vercel.app/"
+## 🌐 Platform Link
 
-Testing Credentials: 
+Click here to access the platform:
+[https://uni-vault-delta.vercel.app/](https://uni-vault-delta.vercel.app/)
 
-admin side:
-id:admin
-pass:admin@univault
+---
 
-Faculty side:
-id:FAC-2026-010
-pass:bxWs6rPt
+## 🔑 Testing Credentials
 
-Student side:
-id:STU-BCA-1-001
-pass:wqMmkFHE
+### 🧑‍💼 Admin
+
+* ID: admin
+* Password: admin@univault
+
+### 👨‍🏫 Faculty
+
+* ID: FAC-2024-001
+* Password:faculty123
+
+### 👨‍🎓 Student
+
+* ID: STU-BCA-2024-001
+* Password:student123
+
+---
+
+
