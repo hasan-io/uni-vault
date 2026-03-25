@@ -164,3 +164,20 @@ This project was developed as part of a hackathon to solve real-world university
 This system transforms **scattered student data into a structured, verified, and actionable digital profile**, helping both students and institutions operate more efficiently.
 
 ---
+## Platform Link
+
+Click here to access our Platform : "https://uni-vault-delta.vercel.app/"
+
+Testing Credentials: 
+
+admin side:
+id:admin
+pass:admin@univault
+
+Faculty side:
+id:FAC-2026-010
+pass:bxWs6rPt
+
+Student side:
+id:STU-BCA-1-001
+pass:wqMmkFHE
